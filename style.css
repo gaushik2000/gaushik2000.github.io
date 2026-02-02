@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHZib3RvcGlhfGVufDB8fHx8MTY5NTI0NzIwMA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center fixed;
+    background: url('https://wallpaperaccess.com/full/2216782.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
     text-align: center;
@@ -9,7 +9,7 @@ body {
 
 .container {
     padding: 20px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
     margin: 50px auto;
     border-radius: 20px;
     width: 90%;
