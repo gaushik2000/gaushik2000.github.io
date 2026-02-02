@@ -1,4 +1,4 @@
-// Question 1 buttons
+// DOM Elements
 const yesBtn = document.querySelector('.yes-btn');
 const noBtn = document.querySelector('.no-btn');
 const question1 = document.getElementById('question1');
@@ -8,25 +8,23 @@ const finalMessage = document.getElementById('finalMessage');
 
 let yesClickCount = 0;
 
-// Move the "No" button randomly
+// Move "No" button randomly on hover
 noBtn.addEventListener('mouseenter', () => {
-    const x = Math.random() * 70;
-    const y = Math.random() * 50;
+    const x = Math.random() * 60;
+    const y = Math.random() * 40;
     noBtn.style.transform = `translate(${x}vw, ${y}vh)`;
 });
 
-// Yes button interaction
+// "Yes" button click
 yesBtn.addEventListener('click', () => {
     yesClickCount++;
     yesBtn.style.transform = `scale(${1 + yesClickCount * 0.1})`;
-
-    if (yesClickCount >= 1) {
-        question1.classList.add('hidden');
-        question2.classList.remove('hidden');
-    }
+    // Reveal next question
+    question1.classList.add('hidden');
+    question2.classList.remove('hidden');
 });
 
-// Question 2 interaction
+// Question 2
 const answerBtnsQ2 = question2.querySelectorAll('.answer-btn');
 const feedbackQ2 = question2.querySelector('.feedback');
 
@@ -40,7 +38,7 @@ answerBtnsQ2.forEach(btn => {
     });
 });
 
-// Question 3 interaction
+// Question 3
 const answerBtnsQ3 = question3.querySelectorAll('.answer-btn');
 const feedbackQ3 = question3.querySelector('.feedback');
 
