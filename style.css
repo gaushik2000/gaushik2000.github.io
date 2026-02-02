@@ -1,43 +1,119 @@
 body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(180deg, #89CFF0, #A1E3D8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHZib3RvcGlhfGVufDB8fHx8MTY5NTI0NzIwMA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
 }
 
-.card {
-  background: #ffffff;
-  width: 320px;
-  padding: 25px;
-  border-radius: 25px;
-  text-align: center;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-  animation: pop 0.5s ease;
+.container {
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    margin: 50px auto;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
 h2 {
-  color: #2b6777;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 button {
-  margin-top: 20px;
-  background: #f77f00;
-  color: white;
-  border: none;
-  padding: 12px 22px;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.yes-btn {
+    background: #ff69b4;
+    color: #fff;
+}
+
+.no-btn {
+    background: #ff4500;
+    color: #fff;
+    position: relative;
+}
+
+.answer-btn {
+    background: #1e90ff;
+    color: #fff;
 }
 
 button:hover {
-  background: #d62828;
+    transform: scale(1.1);
 }
 
-@keyframes pop {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+.hidden {
+    display: none;
+}
+
+.final-message h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.hearts {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(-45deg);
+    animation: floatUp 3s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0) rotate(-45deg);}
+    100% {transform: translateY(-300px) rotate(-45deg);}
+}
+
+.feedback {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #ffeb3b;
 }
