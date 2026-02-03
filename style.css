@@ -1,66 +1,78 @@
-body {
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: url("images/zootopia-bg.jpg") no-repeat center center/cover;
-  color: white;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.section {
+body {
+  background: url("images/zootopia_bg.png") no-repeat center center/cover;
   min-height: 100vh;
-  padding: 40px;
-  background: rgba(0,0,0,0.55);
+  color: #fff;
+}
+
+.page {
+  min-height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  backdrop-filter: blur(3px);
+}
+
+.page.active {
+  display: flex;
 }
 
 .hidden {
   display: none;
 }
 
+.overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 15px;
+}
+
 button {
+  margin-top: 20px;
   padding: 12px 25px;
-  margin: 10px;
-  font-size: 16px;
-  border-radius: 25px;
   border: none;
+  border-radius: 25px;
+  font-size: 16px;
   cursor: pointer;
-  background: pink;
+  background: #ff4d6d;
+  color: white;
+}
+
+.letters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.letter {
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.message-box {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.next-btn {
+  margin-top: 25px;
 }
 
 input {
   padding: 10px;
-  font-size: 16px;
-  border-radius: 10px;
-}
-
-.letters-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.letter {
-  width: 120px;
-  height: 120px;
-  margin: 10px;
-  background: rgba(255,182,193,0.9);
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 15px;
-  font-weight: bold;
-}
-
-/* HEART ANIMATION */
-@keyframes float {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-100vh); opacity: 0; }
-}
-
-.heart {
-  position: fixed;
-  bottom: 0;
-  font-size: 24px;
-  animation: float 6s linear infinite;
+  width: 80%;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
 }
