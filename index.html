@@ -1,35 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Our Love Story 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Our Love Story ❤️</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- FIRST SCREEN -->
-<section id="welcome" class="section active">
-  <div class="card">
-    <h1>Welcome My Love 💖</h1>
-    <p>
-      This little website is not just code…  
-      It’s my heart, my memories, my love — only for YOU 💕
-    </p>
-    <button id="startBtn">Let’s Start 💌</button>
-  </div>
-</section>
+  <!-- WELCOME PAGE -->
+  <section id="welcome" class="page active">
+    <div class="content">
+      <h1>Welcome My Love ❤️</h1>
+      <p>
+        This website is not just pages and buttons.  
+        It holds our memories, smiles, fights, love, and promises.  
+        Scroll or click below to begin our beautiful journey 💕
+      </p>
+      <button id="startBtn">Let’s Start 💖</button>
+    </div>
+  </section>
 
-<!-- SECOND SCREEN -->
-<section id="story" class="section">
-  <div class="card">
-    <h1>Happy 2nd Love Anniversary 💞</h1>
-    <p>
-      Two years of love, fights, laughter, tears  
-      and still choosing each other every day ❤️
-    </p>
-  </div>
-</section>
+  <!-- LETTER PAGE -->
+  <section id="letters" class="page">
+    <div class="content">
+      <h2>Valentine Week Letters 💌</h2>
 
-<script src="script.js"></script>
+      <div class="letters">
+        <button class="letter" data-day="rose">🌹 Rose Day</button>
+        <button class="letter" data-day="propose">💌 Propose Day</button>
+        <button class="letter" data-day="chocolate">🍫 Chocolate Day</button>
+        <button class="letter" data-day="teddy">🧸 Teddy Day</button>
+        <button class="letter" data-day="promise">🤞 Promise Day</button>
+        <button class="letter" data-day="hug">🤗 Hug Day</button>
+        <button class="letter" data-day="kiss">😘 Kiss Day</button>
+        <button class="letter" data-day="valentine">❤️ Valentine’s Day</button>
+      </div>
+
+      <div id="letterMessage" class="message"></div>
+
+      <button id="toQuestions">Continue ➡️</button>
+    </div>
+  </section>
+
+  <!-- QUESTIONS PAGE -->
+  <section id="questions" class="page">
+    <div class="content">
+      <h2 id="questionText"></h2>
+
+      <input id="answerInput" type="text" placeholder="Type your answer here" />
+
+      <div id="yesNoButtons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+      </div>
+
+      <button id="submitBtn">Submit</button>
+
+      <p id="responseMsg"></p>
+    </div>
+  </section>
+
+  <!-- ANNIVERSARY PAGE -->
+  <section id="anniversary" class="page">
+    <div class="content">
+      <h1>Happy Anniversary My Love ❤️</h1>
+      <p>
+        Every day with you feels like a celebration.  
+        I choose you today, tomorrow, and forever 💞
+      </p>
+      <div class="hearts"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
