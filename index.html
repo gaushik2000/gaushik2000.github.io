@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our 2nd Anniversary 💖</title>
+  <meta charset="UTF-8" />
+  <title>For My Love 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
 
-    <!-- Landing Page -->
-    <div id="landingPage" class="page">
-      <h1>Happy 2nd Anniversary! 💖</h1>
-      <p>Scroll down or click below to start your surprise! 🐰🦊</p>
-      <button id="startBtn">Let's Start ➡️</button>
-    </div>
+<!-- LANDING PAGE -->
+<section id="landing" class="section">
+  <h1>Happy 2nd Love Anniversary 💕</h1>
+  <p>
+    This is not just a website.<br>
+    This is a small journey of our memories, love, fights, smiles and promises.
+  </p>
+  <button onclick="goToLetters()">Let's Start 💌</button>
+</section>
 
-    <!-- Hidden Letters Section -->
-    <div id="lettersPage" class="page hidden">
-      <h2>Special Letters ❤️</h2>
-      <div class="letters">
-        <div class="letter-card" data-letter="rose">
-          🌹 Rose Day Letter
-        </div>
-        <div class="letter-card" data-letter="propose">
-          💌 Propose Day Letter
-        </div>
-        <!-- Add more letters here as needed -->
-      </div>
-      <div id="letterContent" class="hidden"></div>
-      <button id="lettersNextBtn" class="hidden">Next ➡️</button>
-    </div>
+<!-- LETTERS PAGE -->
+<section id="letters" class="section hidden">
+  <h2>Open the Letters 💖</h2>
+  <div class="letters-container" id="lettersContainer"></div>
+  <button id="goQuestions" class="hidden" onclick="startQuestions()">Next ➡️</button>
+</section>
 
-    <!-- Questions Section -->
-    <div id="quizPage" class="page hidden">
-      <h2>Some Fun Questions 💖</h2>
-      <div id="quiz"></div>
-    </div>
+<!-- QUESTIONS PAGE -->
+<section id="questions" class="section hidden">
+  <h2 id="questionText"></h2>
+  <input type="text" id="answerInput" class="hidden">
+  <div id="buttons"></div>
+  <p id="message"></p>
+  <button id="nextBtn" class="hidden" onclick="nextQuestion()">Next ➡️</button>
+</section>
 
-    <!-- Final Celebration Page -->
-    <div id="finalPage" class="page hidden">
-      <h2>Yay! You made me the happiest bunny in Zootopia! 🐰💖</h2>
-      <p>Happy Anniversary! 🎉🎊</p>
-      <div class="hearts"></div>
-    </div>
+<!-- FINAL PAGE -->
+<section id="final" class="section hidden">
+  <h1>Happy Anniversary My Love 💖</h1>
+  <p>
+    Loving you is the best decision of my life.<br>
+    I promise to hold your hand forever 🤍
+  </p>
+</section>
 
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
