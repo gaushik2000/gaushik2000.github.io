@@ -2,46 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>For My Love 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Our Love Story ❤️</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- LANDING PAGE -->
-<section id="landing" class="section">
-  <h1>Happy 2nd Love Anniversary 💕</h1>
-  <p>
-    This is not just a website.<br>
-    This is a small journey of our memories, love, fights, smiles and promises.
-  </p>
-  <button onclick="goToLetters()">Let's Start 💌</button>
-</section>
+  <!-- INTRO PAGE -->
+  <section id="intro" class="page active">
+    <div class="overlay">
+      <h1>Welcome My Love ❤️</h1>
+      <p>
+        This little website is not just code…  
+        It’s my heart, my memories, my love —  
+        made only for YOU 💖
+      </p>
 
-<!-- LETTERS PAGE -->
-<section id="letters" class="section hidden">
-  <h2>Open the Letters 💖</h2>
-  <div class="letters-container" id="lettersContainer"></div>
-  <button id="goQuestions" class="hidden" onclick="startQuestions()">Next ➡️</button>
-</section>
+      <p class="scroll-text">Scroll down or click below 👇</p>
+      <button id="startBtn">Let’s Start 💌</button>
+    </div>
+  </section>
 
-<!-- QUESTIONS PAGE -->
-<section id="questions" class="section hidden">
-  <h2 id="questionText"></h2>
-  <input type="text" id="answerInput" class="hidden">
-  <div id="buttons"></div>
-  <p id="message"></p>
-  <button id="nextBtn" class="hidden" onclick="nextQuestion()">Next ➡️</button>
-</section>
+  <!-- VALENTINE WEEK LETTERS -->
+  <section id="letters" class="page hidden">
+    <h2>Open the Hidden Letters 💌</h2>
 
-<!-- FINAL PAGE -->
-<section id="final" class="section hidden">
-  <h1>Happy Anniversary My Love 💖</h1>
-  <p>
-    Loving you is the best decision of my life.<br>
-    I promise to hold your hand forever 🤍
-  </p>
-</section>
+    <div class="letters">
+      <div class="letter" data-day="rose">🌹 Rose Day</div>
+      <div class="letter" data-day="propose">💍 Propose Day</div>
+      <div class="letter" data-day="chocolate">🍫 Chocolate Day</div>
+      <div class="letter" data-day="teddy">🧸 Teddy Day</div>
+      <div class="letter" data-day="promise">🤞 Promise Day</div>
+      <div class="letter" data-day="hug">🤗 Hug Day</div>
+      <div class="letter" data-day="kiss">💋 Kiss Day</div>
+      <div class="letter" data-day="valentine">❤️ Valentine’s Day</div>
+    </div>
 
-<script src="script.js"></script>
+    <div id="letterMessage" class="message-box"></div>
+
+    <button id="toQuizBtn" class="next-btn hidden">Next 💖</button>
+  </section>
+
+  <!-- QUIZ SECTION -->
+  <section id="quiz" class="page hidden">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <input id="textAnswer" type="text" placeholder="Type your answer..." class="hidden" />
+    <button id="submitBtn" class="hidden">Submit</button>
+    <p id="feedback"></p>
+  </section>
+
+  <!-- ANNIVERSARY PAGE -->
+  <section id="anniversary" class="page hidden">
+    <h1>Happy Anniversary My Love 💕</h1>
+    <p>
+      Loving you is my favorite journey.  
+      Thank you for choosing me, every single day ❤️
+    </p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
