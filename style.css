@@ -1,3 +1,4 @@
+/* Body and container */
 body {
   margin: 0;
   font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -10,19 +11,81 @@ body {
 .container {
   padding: 20px;
   background: rgba(0,0,0,0.6);
-  margin: 50px auto;
+  margin: 30px auto;
   border-radius: 20px;
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
-h1 {
+.page {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Landing Page */
+#landingPage h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
 }
 
-h2 {
-  font-size: 1.8em;
+#landingPage p {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+#landingPage button {
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background: #ff69b4;
+  color: #fff;
+}
+
+/* Letters */
+.letters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.letter-card {
+  background: #1e90ff;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.letter-card:hover {
+  transform: scale(1.05);
+}
+
+#letterContent {
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: #ffeb3b;
+}
+
+#lettersNextBtn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background: #32cd32;
+  color: #fff;
+}
+
+/* Quiz */
+#quiz h2 {
+  font-size: 1.5em;
   margin-bottom: 20px;
 }
 
@@ -34,7 +97,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-button {
+button.option-btn {
   padding: 12px 25px;
   font-size: 1.1em;
   border: none;
@@ -43,35 +106,27 @@ button {
   transition: transform 0.3s, background 0.3s;
 }
 
-.yes-btn {
-  background: #ff69b4;
-  color: #fff;
-}
-
-.no-btn {
-  background: #ff4500;
-  color: #fff;
-  position: relative;
-}
-
-.answer-btn {
-  background: #1e90ff;
-  color: #fff;
-}
-
-button:hover {
+button.option-btn:hover {
   transform: scale(1.1);
 }
 
-.hidden {
-  display: none;
+button.correct {
+  background-color: #32cd32;
+  color: #fff;
 }
 
-.final-message h2 {
-  font-size: 2em;
-  margin-top: 20px;
+button.wrong {
+  background-color: #ff4500;
+  color: #fff;
 }
 
+.feedback {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #ffeb3b;
+}
+
+/* Final Hearts */
 .hearts {
   position: relative;
   width: 100%;
@@ -110,10 +165,4 @@ button:hover {
 @keyframes floatUp {
   0% {transform: translateY(0) rotate(-45deg);}
   100% {transform: translateY(-300px) rotate(-45deg);}
-}
-
-.feedback {
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: #ffeb3b;
 }
