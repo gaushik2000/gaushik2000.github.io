@@ -2,56 +2,68 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
+  background: url("images/zootopia-bg.jpg") center/cover no-repeat fixed;
 }
 
-/* SECTIONS */
-.section {
-  position: absolute;
-  inset: 0;
+.page {
   display: none;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.page.active {
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-size: cover;
-  background-position: center;
 }
 
-/* ACTIVE SECTION */
-.section.active {
-  display: flex;
-}
-
-/* BACKGROUNDS */
-#welcome {
-  background-image: url("images/zootopia_bg.jpg");
-}
-
-#story {
-  background-image: url("images/zootopia-bg.jpg");
-}
-
-/* CARD */
-.card {
-  background: rgba(0,0,0,0.6);
-  color: white;
-  padding: 40px;
-  border-radius: 20px;
+.content {
   text-align: center;
-  max-width: 500px;
+  max-width: 700px;
+  padding: 20px;
 }
 
 button {
-  margin-top: 20px;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 30px;
-  background: #ff5c8a;
-  color: white;
+  margin: 10px;
+  padding: 12px 20px;
   font-size: 16px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+}
+
+.letters button {
+  display: block;
+  width: 100%;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+#answerInput {
+  padding: 10px;
+  width: 80%;
+  margin: 10px 0;
+}
+
+#yesNoButtons {
+  display: none;
+}
+
+.hearts::before {
+  content: "❤️ 💕 💖 💗 💘";
+  font-size: 40px;
+  animation: float 3s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-20px); }
 }
