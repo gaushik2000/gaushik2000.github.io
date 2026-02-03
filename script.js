@@ -1,128 +1,120 @@
-/* ---------------- LETTERS ---------------- */
+document.addEventListener("DOMContentLoaded", () => {
 
-const letters = [
-  { title: "Rose Day", msg: "Happy Rose Day! 💖 You are the most beautiful rose in the garden of my life 🌸" },
-  { title: "Propose Day", msg: "💌 Happy Propose Day! Falling in love with you was destiny ❤️" },
-  { title: "Chocolate Day", msg: "Happy Chocolate Day 🍫 Life is like a box of chocolates and YOU are the sweetest!" },
-  { title: "Teddy Day", msg: "🐻 Happy Teddy Day! Every hug is a hug from me" },
-  { title: "Promise Day", msg: "🤞 I promise to love you today, tomorrow and forever" },
-  { title: "Hug Day", msg: "🤗 Your hugs = my happiness" },
-  { title: "Kiss Day", msg: "💋 A kiss from you melts my heart" },
-  { title: "Valentine Day", msg: "❤️ Loving you is my greatest commitment" }
-];
+  const intro = document.getElementById("intro");
+  const lettersPage = document.getElementById("letters");
+  const quizPage = document.getElementById("quiz");
+  const anniversaryPage = document.getElementById("anniversary");
 
-let openedLetters = 0;
+  const startBtn = document.getElementById("startBtn");
+  const toQuizBtn = document.getElementById("toQuizBtn");
+  const letterMessage = document.getElementById("letterMessage");
 
-function goToLetters() {
-  landing.classList.add("hidden");
-  lettersSection.classList.remove("hidden");
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
+  const textAnswer = document.getElementById("textAnswer");
+  const submitBtn = document.getElementById("submitBtn");
+  const feedback = document.getElementById("feedback");
 
-  letters.forEach(l => {
-    const div = document.createElement("div");
-    div.className = "letter";
-    div.innerText = l.title;
-    div.onclick = () => {
-      alert(l.msg);
-      div.style.opacity = "0.5";
-      div.onclick = null;
-      openedLetters++;
-      if (openedLetters === letters.length) {
-        document.getElementById("goQuestions").classList.remove("hidden");
-      }
+  // PAGE SWITCH
+  function showPage(page) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    page.classList.add("active");
+  }
+
+  startBtn.onclick = () => showPage(lettersPage);
+
+  // LETTER CONTENT
+  const letters = {
+    rose: 'Happy Rose Day 🌹<br>"You are the most beautiful rose in my life"',
+    propose: 'Happy Propose Day 💍<br>"Proposing you was irresistible"',
+    chocolate: 'Happy Chocolate Day 🍫<br>"I got the sweetest chocolate — YOU"',
+    teddy: 'Happy Teddy Day 🧸<br>"Every hug is from me"',
+    promise: 'Happy Promise Day 🤞<br>"I promise forever"',
+    hug: 'Happy Hug Day 🤗<br>"Your hugs = my happiness"',
+    kiss: 'Happy Kiss Day 💋<br>"One kiss, endless love"',
+    valentine: 'Happy Valentine’s Day ❤️<br>"You are my always"'
+  };
+
+  document.querySelectorAll(".letter").forEach(letter => {
+    letter.onclick = () => {
+      letterMessage.innerHTML = letters[letter.dataset.day];
+      toQuizBtn.classList.remove("hidden");
     };
-    lettersContainer.appendChild(div);
   });
-}
 
-/* ---------------- QUESTIONS ---------------- */
+  toQuizBtn.onclick = () => {
+    showPage(quizPage);
+    loadQuestion();
+  };
 
-const questions = [
-  {
-    question: "Where was our first date?",
-    type: "text",
-    answer: "hi nana movie in forum mall",
-    msg: "Yes, it was a memorable day for us 💖"
-  },
-  {
-    question: "In which place and event did you propose me?",
-    type: "text",
-    answer: "shawarma shop after lover movie",
-    msg: "That moment was unexpected and magical 💌"
-  },
-  {
-    question: "Which outing experience do you still like most?",
-    type: "text",
-    answer: null,
-    msg: "Aahan 😄 Hibiscus Cafe memories always make me smile"
-  },
-  {
-    question: "Will you hate me?",
-    type: "yesno",
-    correct: "Yes",
-    correctMsg: "I know you baby girl 💖",
-    wrongMsg: "I didn't expect this from you but I love you ❤️"
-  }
-];
+  // QUIZ
+  const questions = [
+    {
+      q: "Where was our first date?",
+      type: "text",
+      answer: "hi nana movie in forum mall",
+      msg: "Yes, it was a memorable day for us ❤️"
+    },
+    {
+      q: "In which place and event did you propose me?",
+      type: "text",
+      answer: "shawarma shop after watching lover movie",
+      msg: "That moment surprised you 💖"
+    },
+    {
+      q: "Which outing experience do you still like most?",
+      type: "text",
+      answer: null,
+      msg: "For me, Hibiscus Cafe 😄"
+    },
+    {
+      q: "Will you hate me?",
+      type: "yesno",
+      msgYes: "I know you my baby girl 💖",
+      msgNo: "I always love you ❤️"
+    }
+  ];
 
-let qIndex = 0;
+  let current = 0;
 
-function startQuestions() {
-  lettersSection.classList.add("hidden");
-  questionsSection.classList.remove("hidden");
-  loadQuestion();
-}
+  function loadQuestion() {
+    feedback.textContent = "";
+    optionsEl.innerHTML = "";
+    textAnswer.classList.add("hidden");
+    submitBtn.classList.add("hidden");
 
-function loadQuestion() {
-  const q = questions[qIndex];
-  message.innerText = "";
-  nextBtn.classList.add("hidden");
-  buttons.innerHTML = "";
-  answerInput.classList.add("hidden");
+    const q = questions[current];
+    questionEl.textContent = q.q;
 
-  questionText.innerText = q.question;
+    if (q.type === "text") {
+      textAnswer.value = "";
+      textAnswer.classList.remove("hidden");
+      submitBtn.classList.remove("hidden");
 
-  if (q.type === "text") {
-    answerInput.value = "";
-    answerInput.classList.remove("hidden");
-    const btn = document.createElement("button");
-    btn.innerText = "Submit";
-    btn.onclick = () => {
-      message.innerText = q.msg;
-      nextBtn.classList.remove("hidden");
-    };
-    buttons.appendChild(btn);
-  } else {
-    ["Yes", "No"].forEach(opt => {
-      const b = document.createElement("button");
-      b.innerText = opt;
-      b.onclick = () => {
-        message.innerText = opt === q.correct ? q.correctMsg : q.wrongMsg;
-        nextBtn.classList.remove("hidden");
+      submitBtn.onclick = () => {
+        feedback.textContent = q.msg;
+        nextQuestion();
       };
-      buttons.appendChild(b);
-    });
+    } else {
+      ["Yes", "No"].forEach(opt => {
+        const btn = document.createElement("button");
+        btn.textContent = opt;
+        btn.onclick = () => {
+          feedback.textContent = opt === "Yes" ? q.msgYes : q.msgNo;
+          nextQuestion();
+        };
+        optionsEl.appendChild(btn);
+      });
+    }
   }
-}
 
-function nextQuestion() {
-  qIndex++;
-  if (qIndex < questions.length) loadQuestion();
-  else showFinal();
-}
+  function nextQuestion() {
+    current++;
+    if (current < questions.length) {
+      setTimeout(loadQuestion, 1200);
+    } else {
+      setTimeout(() => showPage(anniversaryPage), 1500);
+    }
+  }
 
-/* ---------------- FINAL ---------------- */
-
-function showFinal() {
-  questionsSection.classList.add("hidden");
-  final.classList.remove("hidden");
-  setInterval(createHeart, 300);
-}
-
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerText = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}
+});
