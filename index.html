@@ -4,31 +4,25 @@
   <meta charset="UTF-8">
   <title>For You ❤️</title>
   <link rel="stylesheet" href="style.css">
+  <!-- 🔑 THIS defer FIXES YOUR ISSUE -->
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
 <!-- PAGE 0 -->
-<div class="page active" id="p0">
+<section class="page active" id="p0">
   <div class="card">
     <div class="bunny"></div>
     <h2>Hey My Love ❤️</h2>
     <p>Tried something to impress you, hope you will enjoy 💖</p>
-    <button onclick="go(1)">Let’s Start</button>
+    <button id="startBtn">Let’s Start</button>
   </div>
-</div>
+</section>
 
 <!-- PAGE 1 -->
-<div class="page" id="p1">
+<section class="page" id="p1">
   <div class="card">
     <div class="fox"></div>
     <h2>🌹 Happy Rose Day</h2>
-    <p class="hint" onclick="openLetter(this)">Open this hidden letter 💌</p>
-    <p class="letter">You are the most beautiful rose in my life 🌸</p>
-    <button onclick="go(2)">Keep Going ➡️</button>
-  </div>
-</div>
-
-<!-- PAGE 2 -->
-<div class="page" id="p2">
-  <div class="card">
-    <div class="bunny"></
+    <p class="hint">Open
