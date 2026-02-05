@@ -1,109 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Our Love Journey ❤️</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- PAGE 0 : WELCOME -->
-<section class="page active" id="welcome">
+<!-- PAGE 1 : WELCOME -->
+<section class="page active" id="page-0">
   <div class="card">
     <h1>Hey My Love ❤️</h1>
-    <p>
-      This is not just a website.  
-      This is our love, our memories, our journey 💕
+    <p>Tried something to impress you, hope you will enjoy 💖</p>
+    <button onclick="goToPage(1)">Let’s Start 💕</button>
+  </div>
+</section>
+
+<!-- PAGE 2 : ROSE DAY -->
+<section class="page" id="page-1">
+  <div class="card">
+    <h2>🌹 Happy Rose Day</h2>
+    <p class="hint" onclick="showMsg(this)">
+      Open this hidden letter 💌
     </p>
-    <button onclick="goToPage(1)">Let’s Start 💖</button>
-  </div>
-</section>
-
-<!-- VALENTINE WEEK PAGES -->
-<section class="page" id="day1">
-  <div class="card">
-    <h2>🌹 Rose Day</h2>
-    <p class="hint" onclick="showQuote('rose')">💌 Open this hidden letter</p>
-    <p class="quote" id="rose"></p>
-    <button onclick="goToPage(2)">Keep going ➡️</button>
-  </div>
-</section>
-
-<section class="page" id="day2">
-  <div class="card">
-    <h2>💌 Propose Day</h2>
-    <p class="hint" onclick="showQuote('propose')">💌 Open this hidden letter</p>
-    <p class="quote" id="propose"></p>
-    <button onclick="goToPage(3)">Keep going ➡️</button>
-  </div>
-</section>
-
-<section class="page" id="day3">
-  <div class="card">
-    <h2>🍫 Chocolate Day</h2>
-    <p class="hint" onclick="showQuote('chocolate')">💌 Open this hidden letter</p>
-    <p class="quote" id="chocolate"></p>
-    <button onclick="goToPage(4)">Keep going ➡️</button>
-  </div>
-</section>
-
-<section class="page" id="day4">
-  <div class="card">
-    <h2>🧸 Teddy Day</h2>
-    <p class="hint" onclick="showQuote('teddy')">💌 Open this hidden letter</p>
-    <p class="quote" id="teddy"></p>
-    <button onclick="goToPage(5)">Keep going ➡️</button>
-  </div>
-</section>
-
-<section class="page" id="day5">
-  <div class="card">
-    <h2>🤞 Promise Day</h2>
-    <p class="hint" onclick="showQuote('promise')">💌 Open this hidden letter</p>
-    <p class="quote" id="promise"></p>
-    <button onclick="goToPage(6)">Keep going ➡️</button>
-  </div>
-</section>
-
-<section class="page" id="day6">
-  <div class="card">
-    <h2>🤗 Hug Day</h2>
-    <p class="hint" onclick="showQuote('hug')">💌 Open this hidden letter</p>
-    <p class="quote" id="hug"></p>
-    <button onclick="goToPage(7)">Keep going ➡️</button>
-  </div>
-</section>
-
-<section class="page" id="day7">
-  <div class="card">
-    <h2>😘 Kiss Day</h2>
-    <p class="hint" onclick="showQuote('kiss')">💌 Open this hidden letter</p>
-    <p class="quote" id="kiss"></p>
-    <button onclick="goToPage(8)">Keep going ➡️</button>
-  </div>
-</section>
-
-<!-- QUESTION PAGE -->
-<section class="page" id="question">
-  <div class="card">
-    <h2>Will you hate me? 🥺</h2>
-    <button onclick="hateNo()">No</button>
-    <button onclick="hateYes()">Yes</button>
-  </div>
-</section>
-
-<!-- FINAL PAGE -->
-<section class="page" id="final">
-  <div class="card">
-    <h1 class="big">❤️ Happy 2nd Year Anniversary ❤️</h1>
-    <p>
-      Loving you is my forever choice.  
-      I choose you again and again 💖
+    <p class="message hidden">
+      You are the most beautiful rose in the garden of my life 🌸
     </p>
-    <button onclick="restart()">Play Again 🔁</button>
+    <button onclick="goToPage(2)">Keep Going ➡️</button>
   </div>
 </section>
 
-<script src="script.js"></script>
-</body>
-</html>
+<!-- PAGE 3 : PROPOSE DAY -->
+<section class="page" id="page-2">
+  <div class="card">
+    <h2>💌 Happy Propose Day</h2>
+    <p class="hint" onclick="showMsg(this)">
+      Open this hidden letter 💌
+    </p>
+    <p class="message hidden">
+      Falling in love with you was destiny, proposing to you was my courage ❤️
+    </p>
+    <button onclick="goToPage(3)">Keep Going ➡️</button>
+  </div>
+</section>
+
+<!-- PAGE 4 : CHOCOLATE DAY -->
+<section class="page" id="page-3">
+  <div class="card">
+    <h2>🍫 Happy Chocolate Day</h2>
+    <p class="hint" onclick="showMsg(this)">
+      Open this hidden letter 💌
+    </p>
+    <p class="message hidden">
+      Life is sweeter with you, more than any chocolate 🍫
+    </p>
+    <button onclick="goToPage(4)">Keep Going ➡️</button>
+  </div>
+</section>
+
+<!-- PAGE 5 : QUESTION -->
+<section class="page" id="page-4">
+  <div class="card">
