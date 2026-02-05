@@ -1,18 +1,39 @@
-function goToPage(num) {
-  document.querySelectorAll(".page").forEach(p => {
-    p.classList.remove("active");
+const pages = document.querySelectorAll(".page");
+
+function showPage(id) {
+  pages.forEach(p => p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+// Start button
+document.getElementById("startBtn").addEventListener("click", () => {
+  showPage("p1");
+});
+
+// Hidden letter open
+document.querySelectorAll(".hint").forEach(hint => {
+  hint.addEventListener("click", () => {
+    hint.nextElementSibling.classList.remove("hidden");
   });
-  document.getElementById(`page-${num}`).classList.add("active");
-}
+});
 
-function showMsg(el) {
-  el.nextElementSibling.classList.remove("hidden");
-}
+// Next buttons
+document.querySelectorAll(".nextBtn").forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    showPage("p" + (index + 2));
+  });
+});
 
-function wrongChoice() {
-  alert("⚠️ Warning!\nOnly you are allowed to click YES for this question ❤️");
-}
+// Valentine question
+document.getElementById("noBtn").addEventListener("click", () => {
+  alert("⚠️ Only YES is allowed for this question ❤️");
+});
 
-function restart() {
-  goToPage(0);
-}
+document.getElementById("yesBtn").addEventListener("click", () => {
+  showPage("p4");
+});
+
+// Replay
+document.getElementById("replayBtn").addEventListener("click", () => {
+  showPage("p0");
+});
