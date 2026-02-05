@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>For You ❤️</title>
   <link rel="stylesheet" href="style.css">
-  <!-- 🔑 THIS defer FIXES YOUR ISSUE -->
   <script src="script.js" defer></script>
 </head>
 
@@ -16,13 +15,48 @@
     <div class="bunny"></div>
     <h2>Hey My Love ❤️</h2>
     <p>Tried something to impress you, hope you will enjoy 💖</p>
-    <button id="startBtn">Let’s Start</button>
+    <button onclick="showPage('p1')">Let’s Start</button>
   </div>
 </section>
 
-<!-- PAGE 1 -->
+<!-- PAGE 1 : ROSE -->
 <section class="page" id="p1">
   <div class="card">
     <div class="fox"></div>
     <h2>🌹 Happy Rose Day</h2>
-    <p class="hint">Open
+
+    <p class="hint" onclick="this.nextElementSibling.style.display='block'">
+      Open this hidden letter 💌
+    </p>
+
+    <p class="message" style="display:none;">
+      You are the most beautiful rose in the garden of my life 🌸
+    </p>
+
+    <button onclick="showPage('p2')">Keep Going ➡️</button>
+  </div>
+</section>
+
+<!-- PAGE 2 : PROPOSE -->
+<section class="page" id="p2">
+  <div class="card">
+    <div class="bunny"></div>
+    <h2>💌 Happy Propose Day</h2>
+
+    <p class="hint" onclick="this.nextElementSibling.style.display='block'">
+      Open this hidden letter 💌
+    </p>
+
+    <p class="message" style="display:none;">
+      Falling in love with you was destiny, proposing was courage ❤️
+    </p>
+
+    <button onclick="showPage('p3')">Keep Going ➡️</button>
+  </div>
+</section>
+
+<!-- PAGE 3 : QUESTION -->
+<section class="page" id="p3">
+  <div class="card">
+    <div class="fox"></div>
+    <h2
