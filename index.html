@@ -1,129 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Our Love Journey ❤️</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Anniversary Surprise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="app">
+        <!-- Pages container -->
+        <div class="page active" id="page1">
+            <h1>Hey my love, I have tried something new to impress you, hope you will enjoy</h1>
+            <button class="next-btn">Let's Start</button>
+        </div>
 
-<div id="app">
+        <div class="page" id="page2">
+            <h1>Happy Rose Day 🌹</h1>
+            <button class="open-btn">Open</button>
+            <p class="message"></p>
+            <button class="keep-btn">Keep Going</button>
+        </div>
 
-  <!-- PAGE 1 -->
-  <div class="page active">
-    <h1>Hey my love ❤️</h1>
-    <p>I have tried something new to impress you, hope you will enjoy</p>
-    <button onclick="nextPage()">Let's Start</button>
-  </div>
+        <div class="page" id="page3">
+            <h1>Happy Propose Day 💌</h1>
+            <button class="open-btn">Open</button>
+            <p class="message"></p>
+            <button class="keep-btn">Keep Going</button>
+        </div>
 
-  <!-- ROSE TO VALENTINE -->
-  <div class="page" data-msg="Rose Day is special because you are my first and forever rose 🌹">
-    <h1>Happy Rose Day 🌹</h1>
-    <button onclick="openMsg(this)">Open</button>
-    <p class="msg"></p>
-    <button class="next" onclick="nextPage()">Keep going</button>
-  </div>
+        <div class="page" id="page4">
+            <h1>Happy Chocolate Day 🍫</h1>
+            <button class="open-btn">Open</button>
+            <p class="message"></p>
+            <button class="keep-btn">Keep Going</button>
+        </div>
 
-  <div class="page" data-msg="That proposal moment is still beating in my heart 💌">
-    <h1>Happy Propose Day 💍</h1>
-    <button onclick="openMsg(this)">Open</button>
-    <p class="msg"></p>
-    <button class="next" onclick="nextPage()">Keep going</button>
-  </div>
+        <div class="page" id="page5">
+            <h1>Happy Teddy Day 🧸</h1>
+            <button class="open-btn">Open</button>
+            <p class="message"></p>
+            <button class="keep-btn">Keep Going</button>
+        </div>
 
-  <div class="page" data-msg="Chocolate is sweet, but you are sweeter 🍫">
-    <h1>Happy Chocolate Day 🍫</h1>
-    <button onclick="openMsg(this)">Open</button>
-    <p class="msg"></p>
-    <button class="next" onclick="nextPage()">Keep going</button>
-  </div>
+        <div class="page" id="page6">
+            <h1>Happy Promise Day 🤞</h1>
+            <button class="open-btn">Open</button>
+            <p class="message"></p>
+            <button class="keep-btn">Keep Going</button>
+        </div>
 
-  <div class="page" data-msg="My teddy is you, soft heart and warm hugs 🧸">
-    <h1>Happy Teddy Day 🧸</h1>
-    <button onclick="openMsg(this)">Open</button>
-    <p class="msg"></p>
-    <button class="next" onclick="nextPage()">Keep going</button>
-  </div>
+        <div class="page" id="page7">
+            <h1>Happy Hug Day 🤗</h1>
+            <button class="open-btn">Open</button>
+            <p class="message"></p>
+            <button class="keep-btn">Keep Going</button>
+        </div>
 
-  <div class="page" data-msg="I promise to stand with you always 🤞">
-    <h1>Happy Promise Day 🤞</h1>
-    <button onclick="openMsg(this)">Open</button>
-    <p class="msg"></p>
-    <button class="next" onclick="nextPage()">Keep going</button>
-  </div>
+        <div class="page" id="page8">
+            <h1>Happy Kiss Day 😘</h1>
+            <button class="open-btn">Open</button>
+            <p class="message"></p>
+            <button class="keep-btn">Keep Going</button>
+        </div>
 
-  <div class="page" data-msg="My hug is your safest place 🤗">
-    <h1>Happy Hug Day 🤗</h1>
-    <button onclick="openMsg(this)">Open</button>
-    <p class="msg"></p>
-    <button class="next" onclick="nextPage()">Keep going</button>
-  </div>
+        <div class="page" id="page9">
+            <h1>Happy Valentine's Day ❤️</h1>
+            <button class="open-btn">Open</button>
+            <p class="message"></p>
+            <button class="keep-btn">Keep Going</button>
+        </div>
 
-  <div class="page" data-msg="Every kiss reminds me how lucky I am 😘">
-    <h1>Happy Kiss Day 😘</h1>
-    <button onclick="openMsg(this)">Open</button>
-    <p class="msg"></p>
-    <button class="next" onclick="nextPage()">Keep going</button>
-  </div>
+        <div class="page" id="page10">
+            <h1>I have few questions for you</h1>
+            <button class="next-btn">Let's Start</button>
+        </div>
 
-  <div class="page" data-msg="You are my today, tomorrow and forever ❤️">
-    <h1>Happy Valentine's Day ❤️</h1>
-    <button onclick="openMsg(this)">Open</button>
-    <p class="msg"></p>
-    <button class="next" onclick="nextPage()">Keep going</button>
-  </div>
+        <!-- Q&A Pages -->
+        <div class="page" id="q1">
+            <h2>Question 1: When and where was our first date?</h2>
+            <input type="text" class="answer-input">
+            <button class="submit-btn">Submit</button>
+            <p class="feedback"></p>
+        </div>
 
-  <!-- QUESTIONS INTRO -->
-  <div class="page">
-    <h1>I have few questions for you 😍</h1>
-    <button onclick="nextPage()">Let's Start</button>
-  </div>
+        <div class="page" id="q2">
+            <h2>Question 2: In which place you proposed me?</h2>
+            <input type="text" class="answer-input">
+            <button class="submit-btn">Submit</button>
+            <p class="feedback"></p>
+        </div>
 
-  <!-- Q1 -->
-  <div class="page">
-    <h2>When and where was our first date?</h2>
-    <input id="q1" placeholder="Type your answer">
-    <button onclick="checkQ1()">Submit</button>
-    <p id="q1msg"></p>
-  </div>
+        <div class="page" id="q3">
+            <h2>Question 3: Which outing experience you still like most?</h2>
+            <input type="text" class="answer-input">
+            <button class="submit-btn">Submit</button>
+            <p class="feedback"></p>
+        </div>
 
-  <!-- Q2 -->
-  <div class="page">
-    <h2>In which place you proposed me?</h2>
-    <input id="q2" placeholder="Type your answer">
-    <button onclick="checkQ2()">Submit</button>
-    <p id="q2msg"></p>
-  </div>
+        <div class="page" id="q4">
+            <h2>Question 4: Will you hate me?</h2>
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+            <p class="feedback"></p>
+        </div>
 
-  <!-- Q3 -->
-  <div class="page">
-    <h2>Which outing experience you still like most?</h2>
-    <input id="q3">
-    <button onclick="submitQ3()">Submit</button>
-  </div>
+        <div class="page" id="q5">
+            <h2>Question 5: Will you be my valentine forever?</h2>
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+            <p class="feedback"></p>
+        </div>
 
-  <!-- Q4 -->
-  <div class="page">
-    <h2>Will you hate me?</h2>
-    <button onclick="alertMsg('I didn\\'t expect this from you, but I always love you my valentine')">Yes</button>
-    <button onclick="alertMsg('I know you my baby girl, even I never hate you at any situation')">No</button>
-    <button onclick="nextPage()">Next</button>
-  </div>
+        <div class="page" id="final-page">
+            <h1>Happy 2nd Year Anniversary Pattu ❤️🎉</h1>
+        </div>
+    </div>
 
-  <!-- Q5 -->
-  <div class="page">
-    <h2>Will you be my valentine forever?</h2>
-    <button onclick="finalYes()">Yes</button>
-    <button onclick="alert('Sorry, You don\\'t have that option now. You are supposed to choose only Yes. Choose again')">No</button>
-  </div>
-
-  <!-- FINAL -->
-  <div class="page">
-    <h1 class="big">❤️ Happy 2nd Year Anniversary ❤️</h1>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
