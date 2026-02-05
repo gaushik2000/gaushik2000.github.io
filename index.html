@@ -2,61 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For You ❤️</title>
+  <title>Our Love Journey ❤️</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<!-- PAGE 0 -->
-<section class="page active" id="p0">
-  <div class="card">
-    <div class="bunny"></div>
-    <h2>Hey My Love ❤️</h2>
-    <p>Tried something to impress you, hope you will enjoy 💖</p>
-    <button onclick="showPage('p1')">Let’s Start</button>
+<div id="app">
+
+  <!-- PAGE 1 -->
+  <div class="page active">
+    <h1>Hey my love ❤️</h1>
+    <p>I have tried something new to impress you, hope you will enjoy</p>
+    <button onclick="nextPage()">Let's Start</button>
   </div>
-</section>
 
-<!-- PAGE 1 : ROSE -->
-<section class="page" id="p1">
-  <div class="card">
-    <div class="fox"></div>
-    <h2>🌹 Happy Rose Day</h2>
-
-    <p class="hint" onclick="this.nextElementSibling.style.display='block'">
-      Open this hidden letter 💌
-    </p>
-
-    <p class="message" style="display:none;">
-      You are the most beautiful rose in the garden of my life 🌸
-    </p>
-
-    <button onclick="showPage('p2')">Keep Going ➡️</button>
+  <!-- ROSE TO VALENTINE -->
+  <div class="page" data-msg="Rose Day is special because you are my first and forever rose 🌹">
+    <h1>Happy Rose Day 🌹</h1>
+    <button onclick="openMsg(this)">Open</button>
+    <p class="msg"></p>
+    <button class="next" onclick="nextPage()">Keep going</button>
   </div>
-</section>
 
-<!-- PAGE 2 : PROPOSE -->
-<section class="page" id="p2">
-  <div class="card">
-    <div class="bunny"></div>
-    <h2>💌 Happy Propose Day</h2>
-
-    <p class="hint" onclick="this.nextElementSibling.style.display='block'">
-      Open this hidden letter 💌
-    </p>
-
-    <p class="message" style="display:none;">
-      Falling in love with you was destiny, proposing was courage ❤️
-    </p>
-
-    <button onclick="showPage('p3')">Keep Going ➡️</button>
+  <div class="page" data-msg="That proposal moment is still beating in my heart 💌">
+    <h1>Happy Propose Day 💍</h1>
+    <button onclick="openMsg(this)">Open</button>
+    <p class="msg"></p>
+    <button class="next" onclick="nextPage()">Keep going</button>
   </div>
-</section>
 
-<!-- PAGE 3 : QUESTION -->
-<section class="page" id="p3">
-  <div class="card">
-    <div class="fox"></div>
-    <h2
+  <div class="page" data-msg="Chocolate is sweet, but you are sweeter 🍫">
+    <h1>Happy Chocolate Day 🍫</h1>
+    <button onclick="openMsg(this)">Open</button>
+    <p class="msg"></p>
+    <button class="next" onclick="nextPage()">Keep going</button>
+  </div>
+
+  <div class="page" data-msg="My teddy is you, soft heart and warm hugs 🧸">
+    <h1>Happy Teddy Day 🧸</h1>
+    <button onclick="openMsg(this)">Open</button>
+    <p class="msg"></p>
+    <button class="next" onclick="nextPage()">Keep going</button>
+  </div>
+
+  <div class="page" data-msg="I promise to stand with you always 🤞">
+    <h1>Happy Promise Day 🤞</h1>
+    <button onclick="openMsg(this)">Open</button>
+    <p class="msg"></p>
+    <button class="next" onclick="nextPage()">Keep going</button>
+  </div>
+
+  <div class="page" data-msg="My hug is your safest place 🤗">
+    <h1>Happy Hug Day 🤗</h1>
+    <button onclick="openMsg(this)">Open</button>
+    <p class="msg"></p>
+    <button class="next" onclick="nextPage()">Keep going</button>
+  </div>
+
+  <div class="page" data-msg="Every kiss reminds me how lucky I am 😘">
+    <h1>Happy Kiss Day 😘</h1>
+    <button onclick="openMsg(this)">Open</button>
+    <p class="msg"></p>
+    <button class="next" onclick="nextPage()">Keep going</button>
+  </div>
+
+  <div class="page" data-msg="You are my today, tomorrow and forever ❤️">
+    <h1>Happy Valentine's Day ❤️</h1>
+    <button onclick="openMsg(this)">Open</button>
+    <p class="msg"></p>
+    <button class="next" onclick="nextPage()">Keep going</button>
+  </div>
+
+  <!-- QUESTIONS INTRO -->
+  <div class="page">
+    <h1>I have few questions for you 😍</h1>
+    <button onclick="nextPage()">Let's Start</button>
+  </div>
+
+  <!-- Q1 -->
+  <div class="page">
+    <h2>When and where was our first date?</h2>
+    <input id="q1" placeholder="Type your answer">
+    <button onclick="checkQ1()">Submit</button>
+    <p id="q1msg"></p>
+  </div>
+
+  <!-- Q2 -->
+  <div class="page">
+    <h2>In which place you proposed me?</h2>
+    <input id="q2" placeholder="Type your answer">
+    <button onclick="checkQ2()">Submit</button>
+    <p id="q2msg"></p>
+  </div>
+
+  <!-- Q3 -->
+  <div class="page">
+    <h2>Which outing experience you still like most?</h2>
+    <input id="q3">
+    <button onclick="submitQ3()">Submit</button>
+  </div>
+
+  <!-- Q4 -->
+  <div class="page">
+    <h2>Will you hate me?</h2>
+    <button onclick="alertMsg('I didn\\'t expect this from you, but I always love you my valentine')">Yes</button>
+    <button onclick="alertMsg('I know you my baby girl, even I never hate you at any situation')">No</button>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- Q5 -->
+  <div class="page">
+    <h2>Will you be my valentine forever?</h2>
+    <button onclick="finalYes()">Yes</button>
+    <button onclick="alert('Sorry, You don\\'t have that option now. You are supposed to choose only Yes. Choose again')">No</button>
+  </div>
+
+  <!-- FINAL -->
+  <div class="page">
+    <h1 class="big">❤️ Happy 2nd Year Anniversary ❤️</h1>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
