@@ -1,70 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>For You ❤️</title>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<style>
-body{
-  margin:0;
-  font-family:Segoe UI, sans-serif;
-  background:linear-gradient(-45deg,#ff758c,#ff7eb3,#a18cd1,#fbc2eb);
-  background-size:400% 400%;
-  animation:bg 10s ease infinite;
-  color:white;
-}
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
+<!-- PAGE 0 -->
+<div class="page active" id="p0">
+  <div class="card">
+    <div class="bunny"></div>
+    <h2>Hey My Love ❤️</h2>
+    <p>Tried something to impress you, hope you will enjoy 💖</p>
+    <button onclick="go(1)">Let’s Start</button>
+  </div>
+</div>
 
-.page{
-  display:none;
-  min-height:100vh;
-  justify-content:center;
-  align-items:center;
-}
-.page.active{display:flex;}
+<!-- PAGE 1 -->
+<div class="page" id="p1">
+  <div class="card">
+    <div class="fox"></div>
+    <h2>🌹 Happy Rose Day</h2>
+    <p class="hint" onclick="openLetter(this)">Open this hidden letter 💌</p>
+    <p class="letter">You are the most beautiful rose in my life 🌸</p>
+    <button onclick="go(2)">Keep Going ➡️</button>
+  </div>
+</div>
 
-.card{
-  background:rgba(255,255,255,0.18);
-  backdrop-filter:blur(10px);
-  padding:30px;
-  border-radius:20px;
-  width:90%;
-  max-width:500px;
-  text-align:center;
-}
-
-button{
-  padding:10px 22px;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-  font-size:16px;
-  margin-top:15px;
-}
-
-.hint{
-  text-decoration:underline;
-  cursor:pointer;
-}
-
-.hidden{display:none}
-
-/* 🦊 FOX */
-.fox{
-  width:60px;height:60px;
-  background:orange;
-  border-radius:50%;
-  margin:10px auto;
-}
-.fox::before,.fox::after{
-  content:"";
-  position:absolute;
-  width:15px;height:15px;
-  background:orange;
-  border-radius:50%;
-}
-.fox::before{margin-left:-20
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+  <div class="card">
+    <div class="bunny"></
