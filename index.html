@@ -1,63 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For You ❤️</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
 
-<!-- PAGE 1 : WELCOME -->
-<section class="page active" id="page-0">
-  <div class="card">
-    <h1>Hey My Love ❤️</h1>
-    <p>Tried something to impress you, hope you will enjoy 💖</p>
-    <button onclick="goToPage(1)">Let’s Start 💕</button>
-  </div>
-</section>
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:linear-gradient(-45deg,#ff758c,#ff7eb3,#a18cd1,#fbc2eb);
+  background-size:400% 400%;
+  animation:bg 10s ease infinite;
+  color:white;
+}
+@keyframes bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 
-<!-- PAGE 2 : ROSE DAY -->
-<section class="page" id="page-1">
-  <div class="card">
-    <h2>🌹 Happy Rose Day</h2>
-    <p class="hint" onclick="showMsg(this)">
-      Open this hidden letter 💌
-    </p>
-    <p class="message hidden">
-      You are the most beautiful rose in the garden of my life 🌸
-    </p>
-    <button onclick="goToPage(2)">Keep Going ➡️</button>
-  </div>
-</section>
+.page{
+  display:none;
+  min-height:100vh;
+  justify-content:center;
+  align-items:center;
+}
+.page.active{display:flex;}
 
-<!-- PAGE 3 : PROPOSE DAY -->
-<section class="page" id="page-2">
-  <div class="card">
-    <h2>💌 Happy Propose Day</h2>
-    <p class="hint" onclick="showMsg(this)">
-      Open this hidden letter 💌
-    </p>
-    <p class="message hidden">
-      Falling in love with you was destiny, proposing to you was my courage ❤️
-    </p>
-    <button onclick="goToPage(3)">Keep Going ➡️</button>
-  </div>
-</section>
+.card{
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(10px);
+  padding:30px;
+  border-radius:20px;
+  width:90%;
+  max-width:500px;
+  text-align:center;
+}
 
-<!-- PAGE 4 : CHOCOLATE DAY -->
-<section class="page" id="page-3">
-  <div class="card">
-    <h2>🍫 Happy Chocolate Day</h2>
-    <p class="hint" onclick="showMsg(this)">
-      Open this hidden letter 💌
-    </p>
-    <p class="message hidden">
-      Life is sweeter with you, more than any chocolate 🍫
-    </p>
-    <button onclick="goToPage(4)">Keep Going ➡️</button>
-  </div>
-</section>
+button{
+  padding:10px 22px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:16px;
+  margin-top:15px;
+}
 
-<!-- PAGE 5 : QUESTION -->
-<section class="page" id="page-4">
-  <div class="card">
+.hint{
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.hidden{display:none}
+
+/* 🦊 FOX */
+.fox{
+  width:60px;height:60px;
+  background:orange;
+  border-radius:50%;
+  margin:10px auto;
+}
+.fox::before,.fox::after{
+  content:"";
+  position:absolute;
+  width:15px;height:15px;
+  background:orange;
+  border-radius:50%;
+}
+.fox::before{margin-left:-20
