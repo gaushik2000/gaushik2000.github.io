@@ -1,39 +1,46 @@
-const pages = document.querySelectorAll(".page");
-
+// Page switching
 function showPage(id) {
-  pages.forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".page").forEach(p => {
+    p.classList.remove("active");
+  });
   document.getElementById(id).classList.add("active");
 }
 
-// Start button
+// START button
 document.getElementById("startBtn").addEventListener("click", () => {
   showPage("p1");
 });
 
-// Hidden letter open
-document.querySelectorAll(".hint").forEach(hint => {
-  hint.addEventListener("click", () => {
-    hint.nextElementSibling.classList.remove("hidden");
-  });
-});
+// 🔑 EVENT DELEGATION (THIS FIXES YOUR ISSUE)
+document.body.addEventListener("click", function (e) {
 
-// Next buttons
-document.querySelectorAll(".nextBtn").forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    showPage("p" + (index + 2));
-  });
-});
+  // Open hidden letter
+  if (e.target.classList.contains("hint")) {
+    const msg = e.target.nextElementSibling;
+    if (msg && msg.classList.contains("hidden")) {
+      msg.classList.remove("hidden");
+    }
+  }
 
-// Valentine question
-document.getElementById("noBtn").addEventListener("click", () => {
-  alert("⚠️ Only YES is allowed for this question ❤️");
-});
+  // Keep Going buttons
+  if (e.target.classList.contains("nextBtn")) {
+    const currentPage = e.target.closest(".page");
+    const nextId = "p" + (parseInt(currentPage.id.replace("p", "")) + 1);
+    showPage(nextId);
+  }
 
-document.getElementById("yesBtn").addEventListener("click", () => {
-  showPage("p4");
-});
+  // NO button warning
+  if (e.target.id === "noBtn") {
+    alert("⚠️ Only YOU are allowed to click YES for this question ❤️");
+  }
 
-// Replay
-document.getElementById("replayBtn").addEventListener("click", () => {
-  showPage("p0");
+  // YES button → Anniversary page
+  if (e.target.id === "yesBtn") {
+    showPage("p4");
+  }
+
+  // Replay
+  if (e.target.id === "replayBtn") {
+    showPage("p0");
+  }
 });
