@@ -7,13 +7,7 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(
-    -45deg,
-    #ff758c,
-    #ff7eb3,
-    #a18cd1,
-    #fbc2eb
-  );
+  background: linear-gradient(-45deg,#ff758c,#ff7eb3,#a18cd1,#fbc2eb);
   background-size: 400% 400%;
   animation: bg 10s ease infinite;
   color: white;
@@ -37,7 +31,7 @@ body {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255,255,255,0.18);
   backdrop-filter: blur(10px);
   padding: 30px;
   border-radius: 20px;
@@ -62,10 +56,7 @@ button {
 .hint {
   cursor: pointer;
   text-decoration: underline;
-}
-
-.hidden {
-  display: none;
+  margin-bottom: 10px;
 }
 
 .hearts {
